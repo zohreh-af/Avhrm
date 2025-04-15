@@ -120,9 +120,6 @@
   <data name="APP_StringKeys_Account_Login" xml:space="preserve">
     <value>ورود</value>
   </data>
-  <data name="APP_StringKeys_Account_Password" xml:space="preserve">
-    <value>رمز عبور</value>
-  </data>
   <data name="APP_StringKeys_Account_Username" xml:space="preserve">
     <value>نام کاربری</value>
   </data>
@@ -266,5 +263,41 @@
   </data>
   <data name="APP_StringKeys_User" xml:space="preserve">
     <value>کاربر</value>
+  </data>
+  <data name="APP_StringKeys_Vacation_Manage" xml:space="preserve">
+    <value>مدیریت مرخصی ها</value>
+  </data>
+  <data name="APP_StringKeys_View_InfoFormat" xml:space="preserve">
+    <value>{first_item}-{last_item} از {all_items}</value>
+  </data>
+  <data name="APP_StringKeys_Account_Password" xml:space="preserve">
+    <value>رمز عبور</value>
+  </data>
+  <data name="APP_StringKeys_View_RowsPerPageString" xml:space="preserve">
+    <value>تعداد نتایج در هر صفحه</value>
+  </data>
+  <data name="APP_StringKeys_View_AllItemsText" xml:space="preserve">
+    <value>همه نتایج</value>
+  </data>
+  <data name="APP_StringKeys_View_Row" xml:space="preserve">
+    <value>ردیف</value>
+  </data>
+  <data name="APP_StringKeys_Accepted" xml:space="preserve">
+    <value>پذیرفته شده</value>
+  </data>
+  <data name="APP_StringKeys_Declined" xml:space="preserve">
+    <value>رد شده</value>
+  </data>
+  <data name="APP_StringKeys_Operations" xml:space="preserve">
+    <value>عملیات ها</value>
+  </data>
+  <data name="APP_StringKeys_Cancel" xml:space="preserve">
+    <value>لغو</value>
+  </data>
+  <data name="APP_StringKeys_Save" xml:space="preserve">
+    <value>ذخیره</value>
+  </data>
+  <data name="APP_StringKeys_reset" xml:space="preserve">
+    <value>نوسازی</value>
   </data>
 </root>

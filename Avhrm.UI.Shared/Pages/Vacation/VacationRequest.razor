@@ -1,0 +1,142 @@
+﻿@page "/Vacation/Request"
+
+<PageTitle>@TextResources.APP_StringKeys_Vacation_Manage</PageTitle>
+
+<MudPaper Style="margin-top: 20px;">
+    <MudCard>
+        <MudCardHeader>
+            <MudText Typo="Typo.h5">@TextResources.APP_StringKeys_Vacation_Manage</MudText>
+        </MudCardHeader>
+        <MudCardContent>
+                <EditForm Model="Command"
+                          OnValidSubmit="OnValidSubmit"
+                          OnInvalidSubmit="OnInvalidSubmit">
+                    <DataAnnotationsValidator />
+
+                    <MudDatePicker Label="@TextResources.APP_StringKeys_Date"
+                                   @bind-Date="Command.PersianFromDate"
+                                   Culture="@MudblazorDatePickerHelper.GetPersianCulture()"
+                                   TitleDateFormat="dddd, dd MMMM"
+                                   Variant="Variant.Outlined"
+                                   Margin="Margin.Dense"
+                                   PickerVariant="PickerVariant.Dialog" />
+
+                    <MudDatePicker Label="@TextResources.APP_StringKeys_Date"
+                                   @bind-Date="Command.PersianToDate"
+                                   Culture="@MudblazorDatePickerHelper.GetPersianCulture()"
+                                   TitleDateFormat="dddd, dd MMMM"
+                                   Variant="Variant.Outlined"
+                                   Margin="Margin.Dense"
+                                   PickerVariant="PickerVariant.Dialog" />
+
+                    <MudTimePicker @bind-Time="Command.PersianFromTime"
+                                   Label="12 hours"
+                                   PickerVariant="PickerVariant.Dialog"
+                                   Margin="Margin.Dense"
+                                   AmPm="true" />
+
+                    <MudTimePicker @bind-Time="Command.PersianToTime"
+                                   Label="12 hours"
+                                   PickerVariant="PickerVariant.Dialog"
+                                   Margin="Margin.Dense"
+                                   AmPm="true" />
+
+                    <MudTextField @bind-Value="Command.Description"
+                                  Label="@TextResources.APP_StringKeys_Description"
+                                  Variant="Variant.Outlined"
+                                  Margin="Margin.Dense">
+                    </MudTextField>
+
+            <div style="display: flex;gap: 5px;">
+                @if (IsEditMode)
+                {
+                    <MudTooltip Text="@TextResources.APP_StringKeys_Edit">
+                        <MudIconButton Icon="@Icons.Material.Filled.Edit"
+                                       Variant="Variant.Filled"
+                                       ButtonType="ButtonType.Submit"
+                                       Color="Color.Primary" Size="Size.Medium" />
+                    </MudTooltip>
+
+                    <MudTooltip Text="@TextResources.APP_StringKeys_Cancel">
+                        <MudIconButton Icon="@Icons.Material.Filled.Close"
+                                       Variant="Variant.Filled"
+                                       @onclick="CloseEditMode"
+                                       Color="Color.Warning" Size="Size.Medium" />
+                    </MudTooltip>
+
+                }
+                else
+                {
+                    <MudTooltip Text="@TextResources.APP_StringKeys_Save">
+                        <MudIconButton Color="Color.Success"
+                                       Variant="Variant.Filled"
+                                       ButtonType="ButtonType.Submit"
+                                       Icon="@Icons.Material.Filled.Save" />
+                    </MudTooltip>
+
+                    <MudTooltip Text="@TextResources.APP_StringKeys_reset">
+                        <MudIconButton Icon="@Icons.Material.Filled.Refresh"
+                                       Variant="Variant.Filled"
+                                       ButtonType="ButtonType.Reset"
+                                       Color="Color.Warning" Size="Size.Medium" />
+                    </MudTooltip>
+
+                }
+
+            </div>
+            </EditForm>
+
+            <MudDataGrid Items="@AllVacationRequests"
+                         RowsPerPage="10"
+                         Dense="true"
+                         Bordered="true"
+                         Hover="true"
+                         Striped="true">
+                <Columns>
+                    <TemplateColumn Title="@TextResources.APP_StringKeys_View_Row"
+                                    HeaderStyle="background-color: #007bff; color: white; border-left: 1px solid white;">
+                        <CellTemplate>
+                            @(AllVacationRequests.IndexOf(context.Item) + 1)
+                        </CellTemplate>
+                    </TemplateColumn>
+
+                    <PropertyColumn Property="x => x.CreateDateTime"
+                                    Title="@TextResources.APP_StringKeys_SaveDate"
+                                    HeaderStyle="background-color: #007bff; color: white; border-left: 1px solid white;" />
+
+                    <TemplateColumn Title="@TextResources.APP_StringKeys_VacReq_IsVerified">
+                        <CellTemplate>
+                            @if (context.Item.IsVerified)
+                            {
+                                <span style="color: green;">@TextResources.APP_StringKeys_Accepted</span>
+                            }
+                            else
+                            {
+                                <span style="color: red;">@TextResources.APP_StringKeys_Declined</span>
+                            }
+                        </CellTemplate>
+                    </TemplateColumn>
+
+                    <PropertyColumn Property="x => x.Description"
+                                    Title="@TextResources.APP_StringKeys_Description"
+                                    HeaderStyle="background-color: #007bff; color: white; border-left: 1px solid white;" />
+
+                </Columns>
+                <PagerContent>
+                    <MudDataGridPager RowsPerPageString="@TextResources.APP_StringKeys_View_RowsPerPageString"
+                                      InfoFormat="@TextResources.APP_StringKeys_View_InfoFormat"
+                                      AllItemsText="@TextResources.APP_StringKeys_View_AllItemsText" />
+                </PagerContent>
+            </MudDataGrid>
+
+        </MudCardContent>
+    </MudCard>
+</MudPaper>
+
+<MudOverlay Visible="IsLoading"
+            DarkBackground="true">
+    @TextResources.APP_StringKeys_Loading
+    <MudProgressCircular Color="Color.Primary"
+                         Size="Size.Large"
+                         Indeterminate="true" />
+</MudOverlay>

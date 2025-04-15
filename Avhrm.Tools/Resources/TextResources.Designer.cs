@@ -61,6 +61,15 @@ namespace Avhrm.Tools.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to پذیرفته شده.
+        /// </summary>
+        public static string APP_StringKeys_Accepted {
+            get {
+                return ResourceManager.GetString("APP_StringKeys_Accepted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to افزودن/ویرایش کاربر.
         /// </summary>
         public static string APP_StringKeys_Account_AddUser {
@@ -151,6 +160,15 @@ namespace Avhrm.Tools.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to لغو.
+        /// </summary>
+        public static string APP_StringKeys_Cancel {
+            get {
+                return ResourceManager.GetString("APP_StringKeys_Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to مشتری.
         /// </summary>
         public static string APP_StringKeys_Customer {
@@ -165,6 +183,15 @@ namespace Avhrm.Tools.Resources {
         public static string APP_StringKeys_Date {
             get {
                 return ResourceManager.GetString("APP_StringKeys_Date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to رد شده.
+        /// </summary>
+        public static string APP_StringKeys_Declined {
+            get {
+                return ResourceManager.GetString("APP_StringKeys_Declined", resourceCulture);
             }
         }
         
@@ -331,6 +358,15 @@ namespace Avhrm.Tools.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to عملیات ها.
+        /// </summary>
+        public static string APP_StringKeys_Operations {
+            get {
+                return ResourceManager.GetString("APP_StringKeys_Operations", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to پروژه.
         /// </summary>
         public static string APP_StringKeys_Project {
@@ -340,11 +376,29 @@ namespace Avhrm.Tools.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to نوسازی.
+        /// </summary>
+        public static string APP_StringKeys_reset {
+            get {
+                return ResourceManager.GetString("APP_StringKeys_reset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to نقش کاربر.
         /// </summary>
         public static string APP_StringKeys_Role {
             get {
                 return ResourceManager.GetString("APP_StringKeys_Role", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ذخیره.
+        /// </summary>
+        public static string APP_StringKeys_Save {
+            get {
+                return ResourceManager.GetString("APP_StringKeys_Save", resourceCulture);
             }
         }
         
@@ -421,6 +475,15 @@ namespace Avhrm.Tools.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to مدیریت مرخصی ها.
+        /// </summary>
+        public static string APP_StringKeys_Vacation_Manage {
+            get {
+                return ResourceManager.GetString("APP_StringKeys_Vacation_Manage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to مرخصی.
         /// </summary>
         public static string APP_StringKeys_VacReq_Index {
@@ -453,6 +516,42 @@ namespace Avhrm.Tools.Resources {
         public static string APP_StringKeys_VacReq_Verified {
             get {
                 return ResourceManager.GetString("APP_StringKeys_VacReq_Verified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to همه نتایج.
+        /// </summary>
+        public static string APP_StringKeys_View_AllItemsText {
+            get {
+                return ResourceManager.GetString("APP_StringKeys_View_AllItemsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {first_item}-{last_item} از {all_items}.
+        /// </summary>
+        public static string APP_StringKeys_View_InfoFormat {
+            get {
+                return ResourceManager.GetString("APP_StringKeys_View_InfoFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ردیف.
+        /// </summary>
+        public static string APP_StringKeys_View_Row {
+            get {
+                return ResourceManager.GetString("APP_StringKeys_View_Row", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to تعداد نتایج در هر صفحه.
+        /// </summary>
+        public static string APP_StringKeys_View_RowsPerPageString {
+            get {
+                return ResourceManager.GetString("APP_StringKeys_View_RowsPerPageString", resourceCulture);
             }
         }
         
